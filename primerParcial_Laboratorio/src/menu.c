@@ -53,7 +53,7 @@ int menuUno()
 	scanf("%d",&opcion);
 
 	printf("\nOPCION ELEGIDA: %d\n", opcion);
-	return opcion;;
+	return opcion;
 }
 
 int menuDos()
@@ -64,7 +64,10 @@ int menuDos()
 
 	printf(" - 1  - Cliente con mas prestamos activos\n\n");
 	printf(" - 2  - Cliente con mas prestamos saldados\n\n");
-	printf(" - 3  - Cantidad de prestamos mayor a 1000\n\n");
+	printf(" - 3  - Cliente con mas prestamos \n\n");
+	printf(" - 4  - Cantidad de prestamos mayor a 1000\n\n");
+	printf(" - 5  - Prestamos de 12 cuotas\n");
+	printf(" - 6  - Prestamos por cuotas\n");
 	__fpurge(stdin);
 	scanf("%d",&opcion);
 

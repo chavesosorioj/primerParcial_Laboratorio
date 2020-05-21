@@ -89,9 +89,18 @@ int main(int argc, char *argv[]) {
 				case 2:
 					clienteMasPrestamosSaldados(clientes, prestamos, TAM_CLIENTES,TAM_PRESTAMOS);
 					break;
-				case 3:
 
+				case 3:
+					clienteMasPrestamos(clientes, prestamos, TAM_CLIENTES,TAM_PRESTAMOS);
+					break;
+				case 4:
 					prestamosMayores(prestamos, TAM_PRESTAMOS);
+					break;
+				case 5:
+					prestamosDoceCuotas(prestamos, TAM_PRESTAMOS);
+					break;
+				case 6:
+					prestamosPorCuotas(prestamos, TAM_PRESTAMOS);
 					break;
 				}
 

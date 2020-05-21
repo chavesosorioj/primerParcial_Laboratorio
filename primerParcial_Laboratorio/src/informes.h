@@ -38,5 +38,29 @@ int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int 
  */
 
 int clienteMasPrestamosSaldados(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP);
+/*
+ * brief recorre clientes y encuentra el que tenga mas prestamos
+ * param clientes, array clientes donde busca
+ * param prestamos, array prestamos donde busca
+ * param tamC, tamaño de clientes
+ * param tamP, tamaño de prestamos
+ * return 0
+ */
 
+int clienteMasPrestamos(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP);
+/*
+ * brief busca el prestamo que tenga doce cuotas
+ * param prestamos, array donde busca
+ * param tam, tamaño del array
+ * return -1 si no se pudo buscar y 1 si se pudo
+ */
+int prestamosDoceCuotas(ePrestamo prestamos[], int tam);
+/*
+ * brief busca los prestamos que tenga la cantidad de cuotas
+ * 		ingresadas por el usuario
+ * 	param prestamos, array donde busca
+ * 	param tam, tamaño del array
+ * 	return -1 si no se pudo buscar y 1 si se pudo
+ */
+int prestamosPorCuotas(ePrestamo prestamos[], int tam);
 #endif /* INFORMES_H_ */
