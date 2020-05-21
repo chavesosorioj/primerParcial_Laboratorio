@@ -33,14 +33,14 @@ typedef struct{
  * breif Indica que la posición isEmpty está vacía
  * 		la función pone el flag (isEmpty) en TRUE
  * 		en todas las posiciones del array
- * param lista, puntero a array prestamos
+ * param lista, array donde busca
  * param tam, tamaño del array
  * return void
  */
 void inicializar_prestamos(ePrestamo lista[], int tam);
 /*
  * breif busca el primer espacio libre en isEmpty, al encontrarlo rompe la iteración
- * param lista puntero al array de la estructura en la que busca
+ * param lista array en donde busca
  * param tam, tamaño de la estructura
  * return, -1 si no se encontro lugar libre o [i] posicion libre
  */
@@ -99,8 +99,31 @@ void mostrarPrestamos(ePrestamo list[],int tam);
  * return -1 en caso de no haber encontrado coincidencia, o el índice correspondiente con el id
  */
 int buscarIdPrestamo(int* id, int tam, ePrestamo lista[]);
+/*
+ * brief función que modifica el estado de prestamo
+ * 		nuevo estado -> saldado
+ * param lista, array a modificar
+ * return -1 si no se pudo, 1 si se logro
+ * return
+ */
 int saldarPrestamo(ePrestamo lista[], int tam);
+/*
+ * breie función que modifica el estado del prestamo
+ * 		nuevo estado -> activo
+ * param lista, array a modificar
+ * param tam, tamaño del array
+ * return -1 si no se pudo, 1 si se logro
+ */
 int reanudarPrestamo(ePrestamo lista[], int tam);
+
+/*
+ * brief imprimie los clientes con prestamos activos junto con el cuil del cliente
+ * param prestamos, array donde busca los prestamos activos
+ * param cliente, array que recorre
+ * param tamP, tamaño array prestamos
+ * param tamC, tamaño array clientes
+ * return -1 si no se pudo imprimir, 1 si se pudo
+ */
 int imprimirConCuil(ePrestamo prestamos[],int tamP,eClientes clientes[], int tamC);
 
 #endif /* PRESTAMOS_H_ */

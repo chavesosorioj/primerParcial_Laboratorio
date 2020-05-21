@@ -29,7 +29,7 @@ int prestamosMayores(ePrestamo prestamos[],int tam);
 int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP);
 
 /*
- * brief recorre clientes y encuentra el que tenga mas prestamos activos
+ * brief recorre clientes y encuentra el que tenga mas prestamos saldados
  * param clientes, array clientes donde busca
  * param prestamos, array prestamos donde busca
  * param tamC, tamaño de clientes

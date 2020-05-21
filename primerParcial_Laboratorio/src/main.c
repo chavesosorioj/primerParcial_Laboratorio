@@ -28,10 +28,14 @@ int main(int argc, char *argv[]) {
 	int seguirCl=0;;
 	int seguirP=0;
 
+	//setbuf(stdout,NULL);
+
 	inicializar_clientes(clientes, TAM_CLIENTES);
 	inicializar_prestamos(prestamos, TAM_PRESTAMOS);
 	//hardcodeo_clientes(clientes);
 	//hardcodeo_prestamo(prestamos);
+	//mostrarClientes(clientes, TAM_CLIENTES);
+	//mostrarPrestamos(prestamos, TAM_PRESTAMOS);
 
 	do
 	{

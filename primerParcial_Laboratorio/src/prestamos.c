@@ -109,7 +109,7 @@ int altaPrestamos(ePrestamo pLista[], int tamP,eClientes clientes[],int tamC)
 
 	if(pLista!= NULL && tamP >0)
 	{
-		system("clear");
+		//system("clear");
 		__fpurge(stdin);
 
 		printf("\n\t*********ALTA*********\t\n");
@@ -156,9 +156,9 @@ int altaPrestamos(ePrestamo pLista[], int tamP,eClientes clientes[],int tamC)
 	return retorno;
 }
 
-void mostrarPrestamo(ePrestamo lista) // si lo uso para uno poner el printf();
+void mostrarPrestamo(ePrestamo lista)
 {
-	printf("\n\t%d\t\t\t%d\t\t\t%d\t\t\t%d\t\t\t\%d\t\n",
+	printf("\n\t%d		%d			%d		%d		%d\t\n",
 			lista.id,
 			lista.clienteId,
 			lista.importe,
@@ -169,8 +169,8 @@ void mostrarPrestamo(ePrestamo lista) // si lo uso para uno poner el printf();
 }
 void mostrarPrestamos(ePrestamo list[],int tam)
 {
-    system("clear");
-    printf("\n\tID\t\tID CLIENTE\t\tIMPORTE\t\tCUOTAS\t\tESTADO\t\n");
+    //system("clear");
+    printf("\n\tID		ID CLIENTE		IMPORTE		CUOTAS		ESTADO\t\n");
     if(list != NULL && tam>0)
     {
     	for(int i=0; i<tam; i++)
@@ -216,7 +216,7 @@ int saldarPrestamo(ePrestamo lista[], int tam)
 	else
 	{
 		printf("\n\tEl prestamo pertenece al cliente:\t\n");
-		 printf("\n\tID\t\tID CLIENTE\t\tIMPORTE\t\tCUOTAS\t\tESTADO\t\n"); // no tiene que ser la info del cliente?
+		 printf("\n\tID\t\tID CLIENTE\t\tIMPORTE\t\tCUOTAS\t\tESTADO\t\n");
 		 mostrarPrestamo(lista[auxId]);
 		 if(validaConfirmacion()==2)
 		 {
@@ -284,7 +284,7 @@ int imprimirConCuil(ePrestamo prestamos[],int tamP,eClientes clientes[], int tam
 
 	if(prestamos!=NULL && clientes!=NULL && tamC>0 && tamP>0)
 	{
-		system("clear");
+		//system("clear");
 		printf("\n\tLISTA PRESTAMOS ACTIVOS\t\n");
 
 		ocupado=cantidadOcupadoPrestamo(prestamos, TAM_PRESTAMOS);
@@ -305,7 +305,7 @@ int imprimirConCuil(ePrestamo prestamos[],int tamP,eClientes clientes[], int tam
 					{
 						if(prestamos[j].clienteId==clientes[i].id && prestamos[j].estado==ACTIVO)
 						{
-							printf("\n\t%d\t\t%d\t\t%d\t\t%lli\t",
+							printf("\n\t%d\t\t%d\t\t%d\t\t%s\t",
 									prestamos[j].id,
 									prestamos[j].importe,
 									prestamos[j].cuotas,

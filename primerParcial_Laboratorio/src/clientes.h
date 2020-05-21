@@ -11,7 +11,7 @@
 #define TAM_NOMBRE 51
 #define TAM_APELLIDO 51
 #define TAM_CLIENTES 50
-#define CUIL_VACIO 0
+
 
 
 #define LIBRE 0
@@ -22,7 +22,7 @@ typedef struct{
 	int id;
 	char nombre[51];
 	char apellido[51];
-	long long int cuil;
+	char cuil[50];
 	int isEmpty;
 
 }eClientes;
@@ -32,7 +32,7 @@ typedef struct{
  * breif Indica que la posición isEmpty está vacía
  * 		la función pone el flag (isEmpty) en TRUE
  * 		en todas las posiciones del array
- * param lista, puntero a array clientes
+ * param lista, array clientes
  * param tam, tamaño del array
  * return void
  */
@@ -42,10 +42,9 @@ void inicializar_clientes(eClientes lista[], int tam);
  * breif Harcodea todos los campos de la estructura
  *		a fin de comprobar que los datos se vean
  *		correctamente
- *	param eEmpleados, estructura a carcar
+ *	param eClientes, estructura a carcar
  *	param, tam, tamaño de la estructura
- *	param cantidad, número de posiciones a cargar
- *	return la cantidad de lugares cargadps
+ *	return void
  */
 
 void hardcodeo_clientes(eClientes* lista);
@@ -88,7 +87,7 @@ int altaCliente(eClientes lista[], int tam);
 int buscarIdCliente(int* id, int tam, eClientes lista[]);
 
 /*
- * breif muestra un elemento de la estructura
+ * breif muestra los elementos de la estructura
  * param lista en la que busca
  * retur void
  */
@@ -104,8 +103,8 @@ void mostrarCliente(eClientes lista);
 void mostrarClientes(eClientes list[],int len);
 
 /*
- * breif da de baja un elemento del array empleados
- * param pEmpleados, estructura en la que busca
+ * breif da de baja un elemento del array clientes
+ * param pClientes, estructura en la que busca
  * param tam, tamaño del array
  * return -1 si no se logro la baja y 1 si se pudo
  */
@@ -123,9 +122,9 @@ int darBaja(eClientes lista[], int tam);
 int cantidadOcupadoCliente(eClientes* lista, int tam);
 
 /*
- * brief modifica los campos de la estructura empleados
- *param pEStructura, estructura a modificar
- *param tam, tamaño de la estructura
+ * brief modifica los campos del array clientes
+ *param lista, array a modificar
+ *param tam, tamaño del array
  *return -1 si no se modifico y 1 si se logro
  */
 
@@ -135,7 +134,7 @@ int modificar(eClientes lista[], int tam);
 /*
  * brief realiza una lista de los datos cargados segun
  * 		el campo apellido y nombre
- * param pEmpleados, estructura a listar
+ * param pClientes, estructura a listar
  * param tam, tamaño de la estructura
  * return void
  */

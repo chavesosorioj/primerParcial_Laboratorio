@@ -25,7 +25,6 @@ void inicializar_clientes(eClientes lista[], int tam)
 		for(i=0; i<tam;i++)
 			{
 				lista[i].isEmpty=LIBRE;
-				lista[i].cuil=CUIL_VACIO;
 			}
 	}
 }
@@ -37,13 +36,13 @@ void hardcodeo_clientes(eClientes* lista)
     int ID[6]                      ={1000,1001,1002,1003,1004,1005};
     char nombre[6][51]        ={"Eduardo","Maria", "Cristina", "Sabrina", "Gabriel","Tomas"};
     char apellido[6][51]={"Casarero","Gomez", "Sanchez", "Villar", "Chaves","Gallegos"};
-    long long int cuil[6] = {27111111111,27222222221,27333333331,27444444441,27555555551,27666666661};
+    char cuil[6][50] = {"27111111111","27222222221","27333333331","27444444441","27555555551","27666666661"};
     for(int i=0; i<harcodeo; i++)
     {
     	lista[i].id=ID[i];
         strcpy(lista[i].nombre, nombre[i]);
         strcpy(lista[i].apellido, apellido[i]);
-        lista[i].cuil=cuil[i];
+        strcpy(lista[i].cuil, cuil[i]);
         lista[i].isEmpty=OCUPADO;
     }
 }
@@ -83,11 +82,12 @@ int altaCliente(eClientes lista[], int tam)
 	int retorno =-1;
 	char nombre[50];
 	char apellido[50];
-	long long int cuil;
+	char cuil[50];
 	int indice;
 
 	if(lista != NULL && tam >0)
 	{
+
 		__fpurge(stdin);
 
 		printf("\n\t*********ALTA*********\t\n");
@@ -101,12 +101,12 @@ int altaCliente(eClientes lista[], int tam)
 		{	//**********************************VALIDAR LO INGRESADO
 			getStringLetras("\n\tIngrese el nombre del cliente\t\n","\n\tError, debe contener letras\t\n", nombre);
 			getStringLetras("\n\tIngrese el apellido del cliente\t\n","\n\tError, debe contener letras\t\n", apellido);
-			tomarCuil(&cuil);
+			tomarCuil(cuil);
 
 			nuevoCliente.id=indice;
 			strcpy(nuevoCliente.nombre,nombre);
 			strcpy(nuevoCliente.apellido,apellido);
-			nuevoCliente.cuil=cuil;
+			strcpy(nuevoCliente.cuil,cuil);
 			nuevoCliente.isEmpty=OCUPADO;
 			lista[indice] =nuevoCliente;
 
@@ -120,7 +120,7 @@ int altaCliente(eClientes lista[], int tam)
 
 void mostrarCliente(eClientes lista)
 {
-	printf("\n\t%d\t\t\t%s\t\t\t%s\t\t\t%lli\t\t\t",//%lli
+	printf("\n\t%d\t\t%s\t\t%s\t\t%s\t\n",
 			lista.id,
 			lista.nombre,
 			lista.apellido,
@@ -228,7 +228,7 @@ int modificar(eClientes lista[], int tam)
 	int confirmacion;
 	char nombre[51];
 	char apellido[51];
-	long long int cuil;
+	char cuil[51];
 
 	//system("clear");
 	printf("*********MODIFICACION*********");
@@ -293,7 +293,8 @@ int modificar(eClientes lista[], int tam)
 						confirmacion = validaEntero("\t\nConfirma desea modificar el cuil? \n   1 - SI\n    2- NO\t\n");
 						if(confirmacion==1)
 						{
-							tomarCuil(&cuil);
+							tomarCuil(cuil);
+							strcpy(lista[auxIndice].cuil,cuil);
 							printf("\n\tSe realizo la modificación\t\n");
 							retorno=1;
 						}
@@ -336,7 +337,7 @@ int imprimirClientePrestamos(eClientes clientes[],ePrestamo prestamos[],int tamC
 
 	if(clientes != NULL && prestamos != NULL && tamC>0 && tamP >0)
 	{
-		system("clear");
+		//system("clear");
 		printf("*********CLIENTE CON PRESTAMOS ACTIVOS*********");
 		verifIndice = cantidadOcupadoCliente(clientes, TAM_CLIENTES);
 		if(verifIndice==0)
@@ -350,7 +351,7 @@ int imprimirClientePrestamos(eClientes clientes[],ePrestamo prestamos[],int tamC
 				{
 					if(clientes[i].isEmpty==OCUPADO)
 					{
-						printf("\n\t%d\t\t%10s\t\t%10s\t\t%lli\t\t%d\t\n",
+						printf("\n\t%d\t\t%10s\t\t%10s\t\t%14s\t\t%d\t\n",
 								clientes[i].id,
 								clientes[i].nombre,
 								clientes[i].apellido,

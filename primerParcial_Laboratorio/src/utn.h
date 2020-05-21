@@ -158,6 +158,6 @@ int validaConfirmacion(void);
  * param cuit, puntero donde se cargan los datos ingresados
  * return void
  */
-void tomarCuil(long long int *cuil);
+void tomarCuil(char *cuil);
 
 #endif /* UTN_H_ */

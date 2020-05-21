@@ -294,26 +294,49 @@ int validaConfirmacion(void)
 	}
 	return validar;
 }
-void tomarCuil(long long int *cuil)
+void tomarCuil(char *cuil)
 {
-	long long buffer;
-	int confirmacion;
-
+	int bufferUno;
+	int bufferDos;
+	int bufferTres;
+	char auxBufferUno[10];
+	char auxBufferDos[10];
+	char auxBufferTres[10];
+	char buffer[1000];
 
 	//system("clear");
 	printf("\n Formato de cuil: XX-XXXXXXXX-X");
 
-	do
-	{
-		buffer= validaEntero("\nIngrese el numero de cuil:\n");
-		__fpurge(stdin);
-		printf("\n\tEl cuil ingresado es: %lli",buffer);
-		confirmacion=validaEntero("\n\t¿El número ingresado es correcto?\n 1 - Si\n 2 - No");
+		bufferUno = validaEntero("\nIngrese los primeros dos números. [20-23-24-27 // 30-33-34]\n");
+		while(bufferUno != 20 && bufferUno !=23 && bufferUno != 24 && bufferUno !=27 && bufferUno != 30 && bufferUno != 33 && bufferUno !=34)
+		{
+			bufferUno = validaEntero("\nEl número ingresado es incorrecto. Vuelva a intentarlo. [20-23-24-27 // 30-33-34]\n");
+		}
+		//system("clear");
+		bufferDos = validaEntero("\nIngrese el número de DNI o numero de sociedad\n");
+		while(bufferDos<1000000 || bufferDos>100000000)
+		{
+			bufferDos = validaEntero("\nError en cantidad de números. Vuelva a intentarlo.\n");
+		}
+		bufferTres = validaEntero("\nIngrese el último digito.");
+		while(bufferTres<0 || bufferTres>10)
+		{
+			bufferTres = validaEntero("\nError. Debe ser un solo digito");
+		}
 
-	}while(confirmacion !=1);
+		sprintf(auxBufferUno,"%d",bufferUno);
+		sprintf(auxBufferDos,"%d",bufferDos);
+		sprintf(auxBufferTres,"%d",bufferTres);
 
-	*cuil=buffer;
+		strcpy(buffer,auxBufferUno);
+		strcat(buffer,"-");
+		strcat(buffer,auxBufferDos);
+		strcat(buffer,"-");
+		strcat(buffer, auxBufferTres);
 
+		strcpy(cuil, buffer);
+
+		printf("\nEl cuil es %s",buffer);
 	printf("\n\tCuit cargado exitosamente\t\n");
-    system("clear");
+    //system("clear");
 }

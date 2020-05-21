@@ -27,7 +27,7 @@ int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int 
 	int max=0;
 	int i,j;
 
-	if(clientes !=NULL && prestamos !=NULL && tamC>0)
+	if(clientes !=NULL && prestamos !=NULL && tamC>0 && tamP>0)
 	{
 		for(i=0;i<tamC;i++)
 		{
@@ -40,9 +40,9 @@ int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int 
 						if(prestamos[j].estado==ACTIVO)
 						{
 							cantPrestamos++;
-						}//FIN CUARTO IF
-					}//fin segundo if
-				}//fin segundo for
+						}
+					}
+				}
 
 				if(cantPrestamos>max)
 				{
@@ -50,14 +50,14 @@ int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int 
 					auxCliente.id=clientes[i].id;
 					strcpy(auxCliente.nombre,clientes[i].nombre);
 					strcpy(auxCliente.apellido, clientes[i].apellido);
-					auxCliente.cuil=clientes[i].cuil;
+					strcpy(auxCliente.cuil,clientes[i].cuil);
 				}
-			}//fin segundo if
-		}// fin for
-	}//fin primer if
+			}
+		}
+	}
 
-	printf("\t\n ID: %d\t\tNOMBRE: %10s\t\t APELLIDO: %10s\t\t CUIL: %lli\t\n",
-			auxCliente.id+1,
+	printf("\t\n ID: %d\t\tNOMBRE: %10s\t\t APELLIDO: %10s\t\t CUIL: %s\t\n",
+			auxCliente.id,
 			auxCliente.nombre,
 			auxCliente.apellido,
 			auxCliente.cuil
@@ -88,9 +88,9 @@ int clienteMasPrestamosSaldados(eClientes clientes[], ePrestamo prestamos[], int
 						if(prestamos[j].estado==SALDADO)
 						{
 							cantPrestamos++;
-						}//FIN CUARTO IF
-					}//fin segundo if
-				}//fin segundo for
+						}
+					}
+				}
 
 				if(cantPrestamos>max)
 				{
@@ -98,14 +98,14 @@ int clienteMasPrestamosSaldados(eClientes clientes[], ePrestamo prestamos[], int
 					auxCliente.id=clientes[i].id;
 					strcpy(auxCliente.nombre,clientes[i].nombre);
 					strcpy(auxCliente.apellido, clientes[i].apellido);
-					auxCliente.cuil=clientes[i].cuil;
+					strcpy(auxCliente.cuil,clientes[i].cuil);
 				}
-			}//fin segundo if
-		}// fin for
-	}//fin primer if
+			}
+		}
+	}
 
-	printf("\t\n ID: %d\t\tNOMBRE: %10s\t\t APELLIDO: %10s\t\t CUIL: %lli\t\n",
-			auxCliente.id+1,
+	printf("\t\n ID: %d\t\tNOMBRE: %10s\t\t APELLIDO: %10s\t\t CUIL: %s\t\n",
+			auxCliente.id,
 			auxCliente.nombre,
 			auxCliente.apellido,
 			auxCliente.cuil
