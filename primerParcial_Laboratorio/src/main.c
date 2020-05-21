@@ -27,6 +27,8 @@ int main(int argc, char *argv[]) {
 	int opcion;
 	int seguirCl=0;;
 	int seguirP=0;
+	int legajo=1000;
+
 
 	//setbuf(stdout,NULL);
 
@@ -45,7 +47,10 @@ int main(int argc, char *argv[]) {
 			case 1:
 				while(seguirCl!=2)
 				{
-					altaCliente(clientes, TAM_CLIENTES);
+					if(altaCliente(clientes, TAM_CLIENTES,legajo))
+					{
+						legajo++;
+					}
 					seguirCl=agregarMasClientes();
 				}
 				break;

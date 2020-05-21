@@ -72,7 +72,7 @@ int agregarMasClientes(void);
  *return -1 si no cargo, 1 si se pudo
  */
 
-int altaCliente(eClientes lista[], int tam);
+int altaCliente(eClientes lista[], int tam, int legajo);
 
 /*
  * breif busca el id coincidente entre el pasado por parámetro

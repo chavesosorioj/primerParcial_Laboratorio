@@ -76,7 +76,7 @@ int agregarMasClientes(void)
 	return validar;
 }
 
-int altaCliente(eClientes lista[], int tam)
+int altaCliente(eClientes lista[], int tam, int legajo)
 {
 	eClientes nuevoCliente;
 	int retorno =-1;
@@ -103,7 +103,7 @@ int altaCliente(eClientes lista[], int tam)
 			getStringLetras("\n\tIngrese el apellido del cliente\t\n","\n\tError, debe contener letras\t\n", apellido);
 			tomarCuil(cuil);
 
-			nuevoCliente.id=indice;
+			nuevoCliente.id=legajo;
 			strcpy(nuevoCliente.nombre,nombre);
 			strcpy(nuevoCliente.apellido,apellido);
 			strcpy(nuevoCliente.cuil,cuil);
