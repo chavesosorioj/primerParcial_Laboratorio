@@ -340,3 +340,60 @@ void tomarCuil(char *cuil)
 	printf("\n\tCuit cargado exitosamente\t\n");
     //system("clear");
 }
+
+void getName(char* pName[], int tam)
+{
+    char buffer[1000];
+    int maximoChars=tam;
+    int retorno=-1;
+    int i;
+
+    do
+    {
+    	getStringLetras("\nIngrese el nombre\n", "\nError, lo ingresado no son letras", buffer);
+        fflush(stdin);
+
+        while(strlen(buffer)>maximoChars||strlen(buffer)<2)
+        {
+            system("clear");
+            getStringLetras("\nEl nombre debe tener minimo dos caracteres. Vuelva a intentarlo.\n", "\nError, lo ingresado no son letras", buffer);
+        }
+
+        for(i=0;buffer[i] != '\0';i++)
+        {
+        	buffer[i]= tolower(buffer[i]);
+        }
+         *pName=buffer;
+        retorno=1;
+    }
+    while(retorno!=1);
+}
+
+
+void getLastName(char* pName[], int tam)
+{
+    char buffer[1000];
+    int maximoChars=tam;
+    int retorno=-1;
+    int i;
+
+    do
+    {
+    	getStringLetras("\nIngrese el nombre\n", "\nError, lo ingresado no son letras", buffer);
+        fflush(stdin);
+
+        while(strlen(buffer)>maximoChars||strlen(buffer)<2)
+        {
+            system("clear");
+            getStringLetras("\nEl nombre debe tener minimo dos caracteres. Vuelva a intentarlo.\n", "\nError, lo ingresado no son letras", buffer);
+        }
+
+        for(i=0;buffer[i] != '\0';i++)
+        {
+        	buffer[i]= tolower(buffer[i]);
+        }
+         *pName=buffer;
+        retorno=1;
+    }
+    while(retorno!=1);
+}

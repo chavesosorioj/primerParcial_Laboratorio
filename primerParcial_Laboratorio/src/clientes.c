@@ -98,9 +98,9 @@ int altaCliente(eClientes lista[], int tam, int legajo)
 			printf("\n|**********No hay espacios libres**********|\n");
 		}
 		else
-		{	//**********************************VALIDAR LO INGRESADO
-			getStringLetras("\n\tIngrese el nombre del cliente\t\n","\n\tError, debe contener letras\t\n", nombre);
-			getStringLetras("\n\tIngrese el apellido del cliente\t\n","\n\tError, debe contener letras\t\n", apellido);
+		{
+			getName(nombre, TAM_NOMBRE);
+			getLastName(apellido,TAM_APELLIDO);
 			tomarCuil(cuil);
 
 			nuevoCliente.id=legajo;
@@ -259,7 +259,7 @@ int modificar(eClientes lista[], int tam)
 					confirmacion = validaEntero("\t\nConfirma desea modificar el nombre? \n   1 - SI\n    2- NO\t\n");
 					if(confirmacion == 1 )
 					{
-						getStringLetras("\n\tIngrese el nombre del cliente\t\n", "\n\tError, debe contener letras. VUelva a intentarlo", nombre);
+						getName(nombre, TAM_NOMBRE);
 						strcpy(lista[auxIndice].nombre,nombre);
 						printf("\n\tSe realizo la modificación\t\n");
 						retorno=1;
@@ -271,12 +271,11 @@ int modificar(eClientes lista[], int tam)
 				}
 					break;
 				case 2:
-				{
-					//system("clear");
+				{	//system("clear");
 					confirmacion = validaEntero("\n\tConfirma desea modificar el apellido? \n   1 - SI\n    2- NO\t\n");
 					if(confirmacion == 1 )
 					{
-						getStringLetras("\n\tIngrese el apellido del cliente\t\n", "\n\tError, debe contener letras. VUelva a intentarlo", apellido);
+						getLastName(apellido, TAM_APELLIDO);
 						strcpy(lista[auxIndice].apellido,apellido);
 						printf("\n\tSe realizo la modificación\t\n");
 						retorno = 1;
@@ -288,21 +287,19 @@ int modificar(eClientes lista[], int tam)
 				}
 					break;
 				case 3:
-
-						//system("clear");
-						confirmacion = validaEntero("\t\nConfirma desea modificar el cuil? \n   1 - SI\n    2- NO\t\n");
-						if(confirmacion==1)
-						{
-							tomarCuil(cuil);
-							strcpy(lista[auxIndice].cuil,cuil);
-							printf("\n\tSe realizo la modificación\t\n");
-							retorno=1;
-						}
-						else
-						{
-							printf("\n\tSe cancelo la modificación\t\n");
-						}
-
+					//system("clear");
+					confirmacion = validaEntero("\t\nConfirma desea modificar el cuil? \n   1 - SI\n    2- NO\t\n");
+					if(confirmacion==1)
+					{
+						tomarCuil(cuil);
+						strcpy(lista[auxIndice].cuil,cuil);
+						printf("\n\tSe realizo la modificación\t\n");
+						retorno=1;
+					}
+					else
+					{
+						printf("\n\tSe cancelo la modificación\t\n");
+					}
 					break;
 
 			}

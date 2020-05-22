@@ -159,5 +159,7 @@ int validaConfirmacion(void);
  * return void
  */
 void tomarCuil(char *cuil);
+void getName(char* pName[], int tam);
+void getLastName(char* pName[], int tam);
 
 #endif /* UTN_H_ */
