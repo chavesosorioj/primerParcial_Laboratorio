@@ -159,7 +159,19 @@ int validaConfirmacion(void);
  * return void
  */
 void tomarCuil(char *cuil);
+/*
+ * brief solicita un nombre al usuario
+ * param pName, puntero al nombre
+ * tam, tamaño del array
+ * return void
+ */
 void getName(char* pName[], int tam);
-void getLastName(char* pName[], int tam);
+/*
+ * brief solicita un apellido al usuario
+ * param pName, puntero al nombre
+ * tam, tamaño del array
+ * return void
+ */
+void getLastName(char* pLastName[], int tam);
 
 #endif /* UTN_H_ */

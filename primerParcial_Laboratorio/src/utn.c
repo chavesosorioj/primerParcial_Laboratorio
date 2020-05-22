@@ -370,7 +370,7 @@ void getName(char* pName[], int tam)
 }
 
 
-void getLastName(char* pName[], int tam)
+void getLastName(char* pLastName[], int tam)
 {
     char buffer[1000];
     int maximoChars=tam;
@@ -392,7 +392,7 @@ void getLastName(char* pName[], int tam)
         {
         	buffer[i]= tolower(buffer[i]);
         }
-         *pName=buffer;
+         *pLastName=buffer;
         retorno=1;
     }
     while(retorno!=1);
