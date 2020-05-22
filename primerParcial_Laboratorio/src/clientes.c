@@ -87,7 +87,7 @@ int altaCliente(eClientes lista[], int tam, int legajo)
 
 	if(lista != NULL && tam >0)
 	{
-
+		system("clear");
 		__fpurge(stdin);
 
 		printf("\n\t*********ALTA*********\t\n");

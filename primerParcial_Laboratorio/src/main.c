@@ -84,10 +84,10 @@ int main(int argc, char *argv[]) {
 				switch(menuDos())
 				{
 				case 1:
-					clienteMasPrestamosActivos(clientes, prestamos, TAM_CLIENTES, TAM_PRESTAMOS);
+					masPrestamos(clientes, prestamos, TAM_CLIENTES, TAM_PRESTAMOS, ACTIVO);
 					break;
 				case 2:
-					clienteMasPrestamosSaldados(clientes, prestamos, TAM_CLIENTES,TAM_PRESTAMOS);
+					masPrestamos(clientes, prestamos, TAM_CLIENTES, TAM_PRESTAMOS, SALDADO);
 					break;
 
 				case 3:

@@ -18,26 +18,17 @@
  */
 int prestamosMayores(ePrestamo prestamos[],int tam);
 /*
- * brief recorre clientes y encuentra el que tenga mas prestamos activos
+ * brief recorre clientes y encuentra el que tenga mas prestamos segun
+ * 		parametro ingresado. O más activos[0] o más saldados[1]
  * param clientes, array clientes donde busca
  * param prestamos, array prestamos donde busca
  * param tamC, tamaño de clientes
  * param tamP, tamaño de prestamos
+ * param estado, parametro segun el que arroja resultado
  * return 0
  */
+int masPrestamos(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP, int estado);
 
-int clienteMasPrestamosActivos(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP);
-
-/*
- * brief recorre clientes y encuentra el que tenga mas prestamos saldados
- * param clientes, array clientes donde busca
- * param prestamos, array prestamos donde busca
- * param tamC, tamaño de clientes
- * param tamP, tamaño de prestamos
- * return 0
- */
-
-int clienteMasPrestamosSaldados(eClientes clientes[], ePrestamo prestamos[], int tamC, int tamP);
 /*
  * brief recorre clientes y encuentra el que tenga mas prestamos
  * param clientes, array clientes donde busca
