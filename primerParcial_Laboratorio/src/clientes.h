@@ -47,7 +47,7 @@ void inicializar_clientes(eClientes lista[], int tam);
  *	return void
  */
 
-void hardcodeo_clientes(eClientes* lista);
+void hardcodeo_clientes(eClientes *lista);
 
 /*
  * breif busca el primer espacio libre en isEmpty, al encontrarlo rompe la iteración

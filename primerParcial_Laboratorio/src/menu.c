@@ -15,33 +15,29 @@
 
 #include "utn.h"
 
+int menu() {
+	int opcion;
 
-// VERIFICAR CON NUMEROS
-int menu()
-{
-      int opcion;
+	printf("\n*********MENU*********\n\n");
 
-    printf("\n*********MENU*********\n\n");
+	printf(" - 1  - ALTA\n\n");
+	printf(" - 2  - MODIFICAR\n\n");
+	printf(" - 3  - BAJA\n\n");
+	printf(" - 4  - CREAR PRESTAMO\n\n");
+	printf(" - 5  - SALDAR PRESTAMO\n\n");
+	printf(" - 6  - REANUDAR PRESTAMO\n\n");
+	printf(" - 7  - IMPRIMIR CLIENTES\n\n");
+	printf(" - 8  - IMPRIMIR PRESTAMOS CON CUIL\n\n");
+	printf(" - 9  - INFORMES \n\n");
+	printf(" - 11  - SALIR\n\n");
+	__fpurge(stdin);
+	scanf("%d", &opcion);
 
-    printf(" - 1  - ALTA\n\n");
-    printf(" - 2  - MODIFICAR\n\n");
-    printf(" - 3  - BAJA\n\n");
-    printf(" - 4  - CREAR PRESTAMO\n\n");
-    printf(" - 5  - SALDAR PRESTAMO\n\n");
-    printf(" - 6  - REANUDAR PRESTAMO\n\n");
-    printf(" - 7  - IMPRIMIR CLIENTES\n\n");
-    printf(" - 8  - IMPRIMIR PRESTAMOS CON CUIL\n\n");
-    printf(" - 9  - INFORMES \n\n");
-    printf(" - 11  - SALIR\n\n");
-    __fpurge(stdin);
-    scanf("%d",&opcion);
-
-    printf("\nOPCION ELEGIDA: %d\n", opcion);
-    return opcion;
+	printf("\nOPCION ELEGIDA: %d\n", opcion);
+	return opcion;
 }
 
-int menuUno()
-{
+int menuUno() {
 	int opcion;
 
 	printf("\n***INGRESE NÚMERO DE LO QUE DESEA MODIFICAR***\n\n");
@@ -50,14 +46,13 @@ int menuUno()
 	printf(" - 2  - APELLIDO\n\n");
 	printf(" - 3  - CUIL\n\n");
 	__fpurge(stdin);
-	scanf("%d",&opcion);
+	scanf("%d", &opcion);
 
 	printf("\nOPCION ELEGIDA: %d\n", opcion);
 	return opcion;
 }
 
-int menuDos()
-{
+int menuDos() {
 	int opcion;
 
 	printf("\n***INGRESE NÚMERO DEL INFORME QUE DESEA VER***\n\n");
@@ -69,7 +64,7 @@ int menuDos()
 	printf(" - 5  - Prestamos de 12 cuotas\n");
 	printf(" - 6  - Lista de prestamos según número de cuota ingresada\n");
 	__fpurge(stdin);
-	scanf("%d",&opcion);
+	scanf("%d", &opcion);
 
 	printf("\n %d OPCION ELEGIDA: \n", opcion);
 	return opcion;;
